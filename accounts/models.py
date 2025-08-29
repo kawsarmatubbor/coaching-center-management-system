@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
+from . import manager
 
 class CustomUser(AbstractUser):
     GENDER_CHOICE = (
@@ -32,6 +33,8 @@ class CustomUser(AbstractUser):
 
     USERNAME_FIELD = 'phone_number'
     REQUIRED_FIELDS = []
+
+    objects = manager.CustomUserManager()
 
     def __str__(self):
         return f"{self.first_name} {self.last_name} ({self.s_class or 'N/A'})"
