@@ -20,8 +20,10 @@ class RegistrationSerializer(serializers.ModelSerializer):
             'first_name',
             'last_name',
             'fathers_name', 
+            'fathers_occupation'
             'fathers_phone_number', 
             'mothers_name', 
+            'mothers_occupation',
             'mothers_phone_number', 
             'gender',
             'date_of_birth',
